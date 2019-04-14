@@ -1,7 +1,8 @@
-package bramdeconinck.com.cocktailr_android
+package bramdeconinck.com.cocktailr_android.activities
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import bramdeconinck.com.cocktailr_android.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -9,4 +10,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
 }
