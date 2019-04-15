@@ -1,6 +1,14 @@
 <resources>
+
+    <!-- General -->
     <string name="app_name">Cocktailr-Android</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Cocktail Detail -->
+    <string name="cocktail_detail_image_description">Image of the cocktail.</string>
+    <string name="cocktail_detail_title">Blue Margarita</string>
+    <string name="cocktail_detail_category">Category: Ordinary Drink</string>
+    <string name="cocktail_detail_description">Rub rim of cocktail glass with lime juice. Dip rim in coarse salt. Shake
+        tequila, blue curacao, and lime juice with ice, strain into the salt-rimmed glass, and serve.
+    </string>
+
 </resources>
