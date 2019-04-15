@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cocktails_array">
+        <item>Cocktail</item>
+        <item>Ordinary Drink</item>
+        <item>Beer</item>
+        <item>Punch / Party Drink</item>
+        <item>Other / Unknown</item>
+        <item>Shot</item>
+    </string-array>
+</resources>

@@ -22,4 +22,9 @@
             android:label="Cocktail Detail"
             tools:layout="@layout/fragment_cocktail_detail"/>
 
+    <fragment android:id="@+id/suggestionFragment"
+              android:name="bramdeconinck.com.cocktailr_android.fragments.SuggestionFragment"
+              android:label="Make a suggestion"
+              tools:layout="@layout/fragment_suggestion"/>
+
 </navigation>
