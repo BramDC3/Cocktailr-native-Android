@@ -1,11 +1,11 @@
 package bramdeconinck.com.cocktailr_android.models
 
 class Cocktail(
-    id: String,
-    name: String,
-    category: String,
-    instructions: String,
-    imageUrl: String,
-    ingredients: List<String>,
-    measurements: List<String>
+    val id: String,
+    val name: String,
+    //val category: String,
+    //val instructions: String,
+    val imageUrl: String
+    //val ingredients: List<String>,
+    //val measurements: List<String>
 )

@@ -8,15 +8,10 @@ import android.view.ViewGroup
 
 import bramdeconinck.com.cocktailr_android.R
 
-
 class CocktailDetailFragment : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_cocktail_detail, container, false)
     }
-
 
 }
