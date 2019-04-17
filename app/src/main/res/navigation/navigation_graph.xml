@@ -13,7 +13,14 @@
             tools:layout="@layout/fragment_cocktail_list">
         <action
                 android:id="@+id/toCocktailDetail"
-                app:destination="@id/cocktailDetailFragment"/>
+                app:destination="@id/cocktailDetailFragment" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+        <action
+                android:id="@+id/toSearch"
+                app:destination="@id/searchFragment" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
     </fragment>
 
     <fragment
@@ -26,5 +33,15 @@
               android:name="bramdeconinck.com.cocktailr_android.fragments.SuggestionFragment"
               android:label="Make a suggestion"
               tools:layout="@layout/fragment_suggestion"/>
+
+    <fragment android:id="@+id/homeFragment"
+              android:name="bramdeconinck.com.cocktailr_android.fragments.HomeFragment"
+              android:label="fragment_home"
+              tools:layout="@layout/fragment_home"/>
+
+    <fragment android:id="@+id/searchFragment"
+              android:name="bramdeconinck.com.cocktailr_android.fragments.SearchFragment"
+              android:label="Search"
+              tools:layout="@layout/fragment_search"/>
 
 </navigation>

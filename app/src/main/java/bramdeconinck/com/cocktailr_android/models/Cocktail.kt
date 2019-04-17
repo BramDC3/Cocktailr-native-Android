@@ -1,6 +1,6 @@
 package bramdeconinck.com.cocktailr_android.models
 
-class Cocktail(
+data class Cocktail(
     val id: String,
     val name: String,
     //val category: String,
