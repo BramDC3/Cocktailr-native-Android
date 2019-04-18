@@ -1,11 +1,8 @@
 package bramdeconinck.com.cocktailr_android.models.responsemodels
 
 data class CocktailByIdResponseDrink(
-    val idDrink: String,
-    val strDrink: String,
     val strCategory: String,
     val strInstructions: String,
-    val strDrinkThumb: String,
 
     val strIngredient1: String,
     val strIngredient2: String,

@@ -1,18 +1,24 @@
 package bramdeconinck.com.cocktailr_android.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 
 import bramdeconinck.com.cocktailr_android.R
 import bramdeconinck.com.cocktailr_android.adapters.CocktailAdapter
 import bramdeconinck.com.cocktailr_android.models.Cocktail
+import bramdeconinck.com.cocktailr_android.repositories.CocktailRepository
 import kotlinx.android.synthetic.main.fragment_cocktail_list.*
+
 
 class CocktailListFragment : Fragment() {
 
     private lateinit var cocktailAdapter: CocktailAdapter
+    private lateinit var cocktails: MutableLiveData<List<Cocktail>>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +34,7 @@ class CocktailListFragment : Fragment() {
         super.onStart()
 
         prepareRecyclerView()
+        initObservers()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -47,27 +54,15 @@ class CocktailListFragment : Fragment() {
     }
 
     private fun prepareRecyclerView() {
-        val cocktails: List<Cocktail> = listOf(
-            Cocktail(
-                id = "16333",
-                name = "Adam Bomb",
-                imageUrl = "https://www.thecocktaildb.com/images/media/drink/tpxurs1454513016.jpg"
-            ),
-            Cocktail(
-                id = "17229",
-                name = "Adios Amigos Cocktail",
-                imageUrl = "https://www.thecocktaildb.com/images/media/drink/8nk2mp1504819893.jpg"
-            ),
-            Cocktail(
-                id = "14364",
-                name = "Aztec Punch",
-                imageUrl = "https://www.thecocktaildb.com/images/media/drink/uqwuyp1454514591.jpg"
-            )
-        )
-
+        cocktails = CocktailRepository.cocktails
         cocktailAdapter = CocktailAdapter(this, cocktails)
-
         rv_cocktail_list_cocktails.adapter = cocktailAdapter
+    }
+
+    private fun initObservers() {
+        CocktailRepository.cocktails.observe(this, Observer {
+            cocktailAdapter.notifyDataSetChanged()
+        })
     }
 
 }

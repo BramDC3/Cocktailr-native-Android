@@ -5,20 +5,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import bramdeconinck.com.cocktailr_android.R
 import bramdeconinck.com.cocktailr_android.fragments.CocktailListFragment
 import bramdeconinck.com.cocktailr_android.models.Cocktail
+import bramdeconinck.com.cocktailr_android.repositories.CocktailRepository
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.cocktail_list_content.view.*
 
-class CocktailAdapter(private val fragment: CocktailListFragment, private val cocktails: List<Cocktail>): RecyclerView.Adapter<CocktailAdapter.ViewHolder>() {
+class CocktailAdapter(private val fragment: CocktailListFragment, private val cocktails: MutableLiveData<List<Cocktail>>): RecyclerView.Adapter<CocktailAdapter.ViewHolder>() {
     private val onClickListener: View.OnClickListener
 
     init {
         onClickListener = View.OnClickListener { c ->
-            // Hier nog cocktail meegeven (Safe Args?)
+            CocktailRepository.getCocktailById(c.tag as Cocktail)
             fragment.findNavController().navigate(R.id.toCocktailDetail)
         }
     }
@@ -29,7 +31,7 @@ class CocktailAdapter(private val fragment: CocktailListFragment, private val co
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item: Cocktail = cocktails[position]
+        val item: Cocktail = cocktails.value!![position]
 
         Glide.with(fragment)
             .load(item.imageUrl)
@@ -44,7 +46,7 @@ class CocktailAdapter(private val fragment: CocktailListFragment, private val co
         }
     }
 
-    override fun getItemCount() = cocktails.size
+    override fun getItemCount() = cocktails.value!!.size
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imageView: ImageView = view.iv_cocktail_image

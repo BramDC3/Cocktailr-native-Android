@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 
 import bramdeconinck.com.cocktailr_android.R
+import kotlinx.android.synthetic.main.fragment_suggestion.*
 
 class SuggestionFragment : Fragment() {
 
@@ -19,6 +20,11 @@ class SuggestionFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
+        loadSpinner()
+        startListeners()
+    }
+
+    private fun loadSpinner() {
         val spinner: Spinner = view!!.findViewById(R.id.sp_suggestion_category)
         ArrayAdapter.createFromResource(
             this.context!!,
@@ -27,6 +33,12 @@ class SuggestionFragment : Fragment() {
         ).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner.adapter = adapter
+        }
+    }
+
+    private fun startListeners() {
+        imgbtn_suggestion_camera.setOnClickListener {
+
         }
     }
 

@@ -8,14 +8,15 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import bramdeconinck.com.cocktailr_android.R
 import bramdeconinck.com.cocktailr_android.fragments.SearchFragment
+import bramdeconinck.com.cocktailr_android.repositories.CocktailRepository
 import kotlinx.android.synthetic.main.search_list_content.view.*
 
 class SearchAdapter(private val fragment: SearchFragment, private val ingredients: List<String>): RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
     private val onClickListener: View.OnClickListener
 
     init {
-        onClickListener = View.OnClickListener { c ->
-            // Hier nog cocktail meegeven (Safe Args?)
+        onClickListener = View.OnClickListener { i ->
+            CocktailRepository.getCocktailsByIngredient(i.tag as String)
             fragment.findNavController().navigateUp()
         }
     }
