@@ -49,7 +49,7 @@ class SuggestionFragment : Fragment() {
         }
 
         btn_suggestion_add.setOnClickListener {
-            if (madePicture && !tv_suggestion_name.text.isNullOrBlank() && !tv_suggestion_description.text.isNullOrBlank()) {
+            if (madePicture && !et_suggestion_name.text.isNullOrBlank() && !et_suggestion_description.text.isNullOrBlank()) {
                 Toast.makeText(context, "Thank you for your suggestion!", Toast.LENGTH_LONG).show()
             }
         }
