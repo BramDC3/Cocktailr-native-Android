@@ -21,6 +21,7 @@ class CocktailAdapter(private val fragment: CocktailListFragment, private val co
     init {
         onClickListener = View.OnClickListener { c ->
             CocktailRepository.getCocktailById(c.tag as Cocktail)
+            CocktailRepository.selectedCocktail.value = c.tag as Cocktail
             fragment.findNavController().navigate(R.id.toCocktailDetail)
         }
     }

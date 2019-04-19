@@ -8,6 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import bramdeconinck.com.cocktailr_android.R
+import bramdeconinck.com.cocktailr_android.interfaces.ToolbarTitleChanger
 import bramdeconinck.com.cocktailr_android.models.responsemodels.*
 import bramdeconinck.com.cocktailr_android.network.CocktailApi
 import bramdeconinck.com.cocktailr_android.repositories.CocktailRepository
@@ -17,7 +18,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ToolbarTitleChanger {
 
     private lateinit var navController: NavController
 
@@ -37,6 +38,10 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(main_toolbar)
         setupActionBarWithNavController(navController)
         main_bottom_navigation_view.setupWithNavController(navController)
+    }
+
+    override fun updateTitle(title: String) {
+        supportActionBar!!.title = title
     }
 
 }

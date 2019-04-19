@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import bramdeconinck.com.cocktailr_android.R
+import bramdeconinck.com.cocktailr_android.interfaces.ToolbarTitleChanger
 import bramdeconinck.com.cocktailr_android.models.Cocktail
 import bramdeconinck.com.cocktailr_android.repositories.CocktailRepository
 import com.bumptech.glide.Glide
@@ -99,8 +100,15 @@ class CocktailDetailFragment : Fragment() {
     private fun initObservers() {
         CocktailRepository.selectedCocktail.observe(this, Observer {
             cocktail = CocktailRepository.selectedCocktail.value
+            setSupportActionBarTitle()
             fillDetailViews()
         })
+    }
+
+    private fun setSupportActionBarTitle() {
+        if (cocktail != null) {
+            (activity as ToolbarTitleChanger).updateTitle(cocktail!!.name)
+        }
     }
 
 }
