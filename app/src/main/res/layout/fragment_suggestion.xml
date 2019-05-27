@@ -38,17 +38,18 @@
                     app:layout_constraintTop_toBottomOf="@+id/iv_suggestion_image"
                     android:layout_marginTop="24dp"
                     android:textSize="18sp"
-                    android:layout_marginStart="3dp"/>
+            />
 
             <EditText
                     android:id="@+id/et_suggestion_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
-                    android:hint="Blue Margarita"
                     android:ems="10"
+                    android:background="@drawable/grid_border"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_suggestion_name"/>
+                    app:layout_constraintTop_toBottomOf="@+id/tv_suggestion_name" android:paddingStart="3dp"
+                    android:paddingEnd="3dp" android:paddingTop="3dp" android:paddingBottom="3dp"/>
 
             <TextView
                     android:id="@+id/tv_suggestion_category"
@@ -59,15 +60,15 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/et_suggestion_name"
                     android:layout_marginTop="16dp"
-                    android:layout_marginStart="3dp"
                     android:textSize="18sp"/>
 
             <Spinner
                     android:id="@+id/sp_suggestion_category"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/grid_border"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_suggestion_category"/>
+                    app:layout_constraintTop_toBottomOf="@+id/tv_suggestion_category" android:padding="3dp"/>
 
             <TextView
                     android:id="@+id/tv_suggestion_description"
@@ -78,7 +79,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sp_suggestion_category"
                     android:layout_marginTop="16dp"
-                    android:layout_marginStart="3dp"
                     android:textSize="18sp"/>
 
             <EditText
@@ -88,10 +88,10 @@
                     android:inputType="textMultiLine"
                     android:lines="3"
                     android:gravity="top"
-                    android:hint="Rub rim of cocktail glass with lime juice. Dip rim in coarse salt. Shake tequila, blue curacao, and lime juice with ice, strain into the salt-rimmed glass, and serve."
                     android:ems="10"
+                    android:background="@drawable/grid_border"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_suggestion_description"/>
+                    app:layout_constraintTop_toBottomOf="@+id/tv_suggestion_description" android:padding="3dp"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cl_suggestion_buttons"
